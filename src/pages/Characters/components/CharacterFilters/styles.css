@@ -1,0 +1,8 @@
+.modal-background .ant-modal-content {
+    background-color: rgb(31, 31, 31);
+}
+
+.modal-background .ant-tag-checkable:hover {
+    background-color: gray;
+    color: white;
+} 
