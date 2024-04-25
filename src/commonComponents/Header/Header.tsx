@@ -1,6 +1,7 @@
 import { Flex, Menu, Typography } from 'antd';
 import { Header as BasicHeader } from 'antd/es/layout/layout';
 import { navItems } from '../../constants';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   return (
@@ -31,7 +32,10 @@ export const Header = () => {
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={['1']}
-          items={navItems}
+          items={navItems.map((item) => ({
+            key: item.key,
+            label: <Link to={item.link}>{item.label}</Link>,
+          }))}
           style={{
             flex: 1,
             alignItems: 'center',
