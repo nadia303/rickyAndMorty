@@ -1,4 +1,5 @@
 export enum QueryKey {
   GetAllEpisodes = "getAllEpisodes",
-  GetAllCharacters = "getAllCharacters"
+  GetAllCharacters = "getAllCharacters",
+  GetCharactersForEpisode = "getCharactersForEpisode"
 }
