@@ -1,0 +1,18 @@
+.modal-background .ant-modal-content {
+    background-color: rgb(31, 31, 31);
+}
+
+.custom-button {
+    margin-top: 20px;
+    background-color: rgb(49, 49, 49);
+    color: rgb(87, 153, 239);
+    width: 200px;
+    align-self: center;
+    border: rgb(49, 49, 49);
+    height: 45px;
+}
+
+.modal-background .ant-modal-content .custom-button:hover {
+    background: rgb(81, 85, 105);
+    background-color: rgb(81, 85, 105);
+}

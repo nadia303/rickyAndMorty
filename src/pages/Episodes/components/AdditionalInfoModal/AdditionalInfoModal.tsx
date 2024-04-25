@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import { Col, Divider, Flex, Modal, Row, Space, Typography } from 'antd';
-import { InfoCircleOutlined } from '@ant-design/icons';
+import { CloseOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import image from '../../../../assets/images/rick_and_morty.jpeg';
 import { Characters } from '../Charcters';
 
@@ -23,10 +23,6 @@ export const AdditionalInfoModal: FC<AdditionalInfoModalProps> = ({
     setIsModalOpen(true);
   };
 
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-
   const handleCancel = () => {
     setIsModalOpen(false);
   };
@@ -46,27 +42,37 @@ export const AdditionalInfoModal: FC<AdditionalInfoModalProps> = ({
         onClick={showModal}
       />
       <Modal
-        title="Basic Modal"
         open={isModalOpen}
-        onOk={handleOk}
+        footer={null}
         onCancel={handleCancel}
+        closeIcon={<CloseOutlined style={{ color: 'white' }} />}
+        wrapClassName="modal-background"
       >
-        <Flex vertical>
-          <Row gutter={[16, 16]}>
-            <Col span={8}>
+        <Flex vertical style={{ margin: '30px 0' }}>
+          <Row>
+            <Col span={10}>
               <img
                 src={image}
                 alt="Ricky&Morty"
                 style={{ width: 150, height: '100%', objectFit: 'cover' }}
               />
             </Col>
-            <Col span={16}>
+            <Col span={14}>
               <Space direction="vertical">
-                <Typography.Title level={4} type="warning">
+                <Typography.Title
+                  level={2}
+                  style={{ marginTop: '0', color: 'rgb(87, 153, 239)' }}
+                >
                   {name}
                 </Typography.Title>
-                <Typography.Title level={5}>{episode}</Typography.Title>
-                <Typography.Text type="secondary">{date}</Typography.Text>
+                <Typography.Text type="secondary" style={{ color: 'white' }}>
+                  <strong>Episode: </strong>
+                  {episode}
+                </Typography.Text>
+                <Typography.Text type="secondary" style={{ color: 'white' }}>
+                  <strong>Date: </strong>
+                  {date}
+                </Typography.Text>
               </Space>
             </Col>
           </Row>
@@ -74,7 +80,14 @@ export const AdditionalInfoModal: FC<AdditionalInfoModalProps> = ({
           {characters.length > 0 && (
             <>
               <Divider plain={false} />
-              <Typography.Title level={4} style={{ marginTop: 0 }}>
+              <Typography.Title
+                level={3}
+                style={{
+                  marginTop: 0,
+                  color: 'rgb(245, 197, 24)',
+                  marginBottom: '30px',
+                }}
+              >
                 Characters
               </Typography.Title>
               <Characters characters={characters} />
