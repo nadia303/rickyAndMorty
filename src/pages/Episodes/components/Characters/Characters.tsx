@@ -18,7 +18,7 @@ export const Characters: FC<CharactersProps> = ({ characters }) => {
       <Flex gap="middle" vertical>
         {data?.map((character: Character) => {
           return (
-            <Row key={character.id} align="top">
+            <Row key={character.id} align="middle">
               <Col span={10}>
                 <Image src={character.image} width={150} />
               </Col>

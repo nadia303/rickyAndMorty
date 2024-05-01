@@ -111,7 +111,7 @@ export const Characters = () => {
           {!data && <Empty />}
         </Space>
       </Spin>
-      {data && (
+      {data && total && total > 20 && (
         <Pagination
           current={page}
           total={total}

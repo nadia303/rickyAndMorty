@@ -2,7 +2,8 @@ import { CloseOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import { Col, Divider, Flex, Modal, Row, Space, Typography, Image } from 'antd';
 import { FC, useState } from 'react';
 
-import image from '../../../../assets/images/rick_and_morty.jpeg';
+import image from '../../../../assets/images/Rick-and-Morty2.jpeg';
+
 import { Residents } from '../Residents';
 import './styles.css';
 
@@ -43,7 +44,7 @@ export const AdditionalInfoModal: FC<AdditionalInfoModalProps> = ({
         wrapClassName="modal-background"
       >
         <Flex vertical className="modal-content">
-          <Row>
+          <Row align="middle">
             <Col span={10}>
               <Image src={image} width={150} />
             </Col>

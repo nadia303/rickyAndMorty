@@ -40,7 +40,7 @@ export const AdditionalInfoModal: FC<AdditionalInfoModalProps> = ({
         wrapClassName="modal-background"
       >
         <Flex vertical className="character-info">
-          <Row>
+          <Row align="middle">
             <Col span={10}>
               <Image src={image} width={150} />
             </Col>
