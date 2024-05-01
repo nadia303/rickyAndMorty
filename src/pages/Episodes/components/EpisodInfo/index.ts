@@ -1,1 +1,1 @@
-export { EpisodeInfo } from "./EpisodInfo"
+export { EpisodeInfo } from './EpisodInfo'

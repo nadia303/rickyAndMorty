@@ -1,7 +1,8 @@
 
-import { useQuery } from "react-query"
-import { getAllEpisodes } from "../queryApi";
-import { QueryKey } from "../../../constants";
+import { useQuery } from 'react-query'
+
+import { getAllEpisodes } from '../queryApi';
+import { QueryKey } from '../../../constants';
 
 export const useGetAllEpisodes = (page: number) => {
   const { data, ...rest } = useQuery({

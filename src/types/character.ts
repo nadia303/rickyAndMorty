@@ -1,5 +1,5 @@
-import { Gender } from "./gender";
-import { Status } from "./status";
+import { Gender } from './gender';
+import { Status } from './status';
 
 export type Character = {
     id: number;

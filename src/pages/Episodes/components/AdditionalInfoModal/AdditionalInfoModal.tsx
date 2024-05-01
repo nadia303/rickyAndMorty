@@ -1,6 +1,7 @@
 import { FC, useState } from 'react';
 import { Col, Divider, Flex, Modal, Row, Space, Typography } from 'antd';
 import { CloseOutlined, InfoCircleOutlined } from '@ant-design/icons';
+
 import image from '../../../../assets/images/rick_and_morty.jpeg';
 import { Characters } from '../Charcters';
 

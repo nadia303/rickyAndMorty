@@ -1,7 +1,8 @@
 import { Card, Col, Row, Space, Typography, Image } from 'antd';
 import { FC } from 'react';
-import { Gender } from '../../../../types/gender';
-import { Status } from '../../../../types/status';
+
+import { Gender } from '../../../../types';
+import { Status } from '../../../../types';
 
 interface CharacterInfoProps {
   name: string;

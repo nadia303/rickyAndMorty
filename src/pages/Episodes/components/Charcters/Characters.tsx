@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { Button, Col, Flex, Image, Row, Spin, Typography } from 'antd';
+
 import { useGetCharactersForEpisode } from '../../hooks/useGetCharactersForEpisode';
-import { Character } from '../../../../types/character';
+import { Character } from '../../../../types';
 
 interface CharactersProps {
   characters: string[];

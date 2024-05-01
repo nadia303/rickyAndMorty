@@ -1,5 +1,6 @@
 import { Card, Col, Image, Row, Space, Typography } from 'antd';
 import { FC } from 'react';
+
 import { AdditionalInfoModal } from '../AdditionalInfoModal';
 import image from '../../../../assets/images/rick_and_morty.jpeg';
 

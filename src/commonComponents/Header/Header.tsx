@@ -1,7 +1,9 @@
 import { Flex, Menu, Typography } from 'antd';
 import { Header as BasicHeader } from 'antd/es/layout/layout';
-import { navItems } from '../../constants';
+
 import { Link } from 'react-router-dom';
+
+import { navItems } from '../../constants';
 
 export const Header = () => {
   return (

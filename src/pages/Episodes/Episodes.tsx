@@ -1,14 +1,12 @@
-import { Flex, Pagination, Space, Spin, Typography } from 'antd';
+import { Flex, Pagination, Spin, Typography } from 'antd';
 import { FC, useState } from 'react';
-import { useGetAllEpisodes } from './hooks/useGetAllEpisodes';
-import { EpisodeInfo } from './components/EpisodInfo';
+
 import { Episode } from '../../types';
 
-interface EpisodesProps {
-  name?: string;
-}
+import { useGetAllEpisodes } from './hooks/useGetAllEpisodes';
+import { EpisodeInfo } from './components/EpisodInfo';
 
-export const Episodes: FC<EpisodesProps> = () => {
+export const Episodes: FC = () => {
   const [page, setPage] = useState(1);
 
   const { data, total, isLoading, isFetching } = useGetAllEpisodes(page);

@@ -1,12 +1,19 @@
 import { Empty, Flex, Pagination, Space, Spin, Tag, Typography } from 'antd';
 import { useState } from 'react';
+
+import Search from 'antd/es/input/Search';
+
+import { Character } from '../../types';
+
+import { Gender } from '../../types';
+
+import { Status } from '../../types';
+
 import { useGetAllCharacters } from './hooks/useGetAllCharacters';
 import { CharacterInfo } from './components/CharacterInfo';
-import { Character } from '../../types/character';
-import Search from 'antd/es/input/Search';
+
 import { CharacterFilters } from './components/CharacterFilters';
-import { Gender } from '../../types/gender';
-import { Status } from '../../types/status';
+
 
 export const Characters = () => {
   const [searchQuery, setSearchQuery] = useState('');

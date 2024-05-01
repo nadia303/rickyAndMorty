@@ -1,1 +1,1 @@
-export { AdditionalInfoModal } from "./AdditionalInfoModal"
+export { AdditionalInfoModal } from './AdditionalInfoModal'

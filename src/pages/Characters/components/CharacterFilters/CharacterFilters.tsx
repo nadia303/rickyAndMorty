@@ -1,8 +1,9 @@
 import { CloseOutlined, FilterFilled } from '@ant-design/icons';
 import { Button, Flex, Modal, Tag, Typography } from 'antd';
 import { Dispatch, FC, SetStateAction, useState } from 'react';
-import { Gender } from '../../../../types/gender';
-import { Status } from '../../../../types/status';
+
+import { Gender } from '../../../../types';
+import { Status } from '../../../../types';
 import './styles.css';
 
 interface CharacterFiltersProps {

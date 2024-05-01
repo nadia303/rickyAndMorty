@@ -1,8 +1,9 @@
-import { useQuery } from "react-query"
-import { getAllCharacters } from "../queryApi";
-import { QueryKey } from "../../../constants";
-import { Gender } from "../../../types/gender";
-import { Status } from "../../../types/status";
+import { useQuery } from 'react-query'
+
+import { getAllCharacters } from '../queryApi';
+import { QueryKey } from '../../../constants';
+import { Gender } from '../../../types';
+import { Status } from '../../../types';
 
 interface GetAllCharactersProps {
   page: number;

@@ -1,8 +1,12 @@
+import { useInfiniteQuery } from 'react-query';
+
+import { useState } from 'react';
+
 import { QueryKey } from '../../../constants/queryKey';
-import { useInfiniteQuery } from "react-query";
-import { getCharacters } from "../queryApi";
-import { useState } from "react";
-import { getIdFromUrl } from "../components/AdditionalInfoModal/utils/getIdFromUrl";
+import { getCharacters } from '../queryApi';
+
+
+import { getIdFromUrl } from '../components/AdditionalInfoModal/utils/getIdFromUrl';
 
 export const useGetCharactersForEpisode = (characters: string[]) => {
     const batchSize = 3;

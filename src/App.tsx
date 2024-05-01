@@ -1,11 +1,14 @@
 import { Flex, Layout } from 'antd';
 import { Content } from 'antd/es/layout/layout';
+
+import { Route, Routes } from 'react-router-dom';
+
 import { Header } from './commonComponents/Header';
 import { Footer } from './commonComponents/Footer/Footer';
 import { Episodes } from './pages/Episodes';
 import { Characters } from './pages/Characters';
-import { Route, Routes } from 'react-router-dom';
 import './index.css';
+import { Locations } from './pages/Locations';
 
 function App() {
   return (
@@ -31,6 +34,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Episodes />} />
             <Route path="/characters" element={<Characters />} />
+            <Route path="/locations" element={<Locations />} />
           </Routes>
         </Flex>
       </Content>

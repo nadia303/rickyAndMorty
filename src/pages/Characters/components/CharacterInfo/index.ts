@@ -1,1 +1,1 @@
-export { CharacterInfo } from "./CharacterInfo"
+export { CharacterInfo } from './CharacterInfo'

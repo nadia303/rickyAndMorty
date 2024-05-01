@@ -1,6 +1,6 @@
-import { api } from "../../api"
-import { Episode, ResponseInfo } from "../../types";
-import { Character } from "../../types/character";
+import { api } from '../../api'
+import { Episode, ResponseInfo } from '../../types';
+import { Character } from '../../types';
 
 export interface AllEpisodesResponse {
   data: {
@@ -16,7 +16,7 @@ export interface CharacterResponse {
 export const getAllEpisodes = (page: number): Promise<AllEpisodesResponse> => {
   return api({
     method: 'get',
-    url: "episode",
+    url: 'episode',
     params: { page },
   })
 }
