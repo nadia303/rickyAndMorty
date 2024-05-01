@@ -45,7 +45,7 @@ export const Characters = () => {
   return (
     <>
       <Typography.Title level={2} className="characters-main-title">
-        Characters ({total})
+        Characters ({total || 0})
       </Typography.Title>
 
       <Spin tip="Loading" size="small" spinning={isLoading || isFetching}>
