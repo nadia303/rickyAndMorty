@@ -1,2 +1,6 @@
-export type { Episode } from "./episode"
-export type { ResponseInfo } from "./responseInfo"
+export type { Episode } from './episode'
+export type { ResponseInfo } from './responseInfo'
+export type { Character } from './character'
+export { Gender } from './gender'
+export type { Location } from './location'
+export { Status } from './status'
