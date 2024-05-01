@@ -21,10 +21,10 @@ export const LocationInfo: FC<LocationInfoProps> = ({
   return (
     <Card className="location-card">
       <Row wrap align="middle" gutter={[16, 16]}>
-        <Col span={5}>
-          <Image src={image} width={200} />
+        <Col xs={24} md={5} sm={8}>
+          <Image src={image} width="100%" />
         </Col>
-        <Col span={19}>
+        <Col xs={24} md={19} sm={16}>
           <Space direction="vertical">
             <Typography.Title level={4} className="locations-title-info">
               {name}

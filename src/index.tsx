@@ -6,10 +6,18 @@ import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
+
+const url = process.env.REACT_APP_API_URL_GRAPHQL;
 
 const apolloClient = new ApolloClient({
-  uri: 'https://rickandmortyapi.com/graphql',
+  uri: url,
   cache: new InMemoryCache(),
 });
 

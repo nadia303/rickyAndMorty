@@ -23,7 +23,7 @@ export const Characters = () => {
     selectedStatus,
   });
 
-  const onChangePage = (value: number) => {
+  const handleChangePage = (value: number) => {
     setPage(value);
   };
 
@@ -71,7 +71,13 @@ export const Characters = () => {
             setSelectedStatus={setSelectedStatus}
           />
         </Flex>
-        <Flex align="center" gap="middle" wrap="wrap" className="selected-tags">
+        <Flex
+          align="center"
+          gap="small"
+          wrap="wrap"
+          justify="flex-start"
+          className="selected-tags"
+        >
           {selectedGender && (
             <Tag
               closable
@@ -111,7 +117,7 @@ export const Characters = () => {
           total={total}
           pageSize={20}
           showSizeChanger={false}
-          onChange={onChangePage}
+          onChange={handleChangePage}
           className="pagination"
         />
       )}

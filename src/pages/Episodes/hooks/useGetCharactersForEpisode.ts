@@ -29,6 +29,7 @@ export const useGetCharactersForEpisode = (characters: string[]) => {
             const length = characters.length
             return startIndex < length
         },
+        keepPreviousData: true,
     });
 
     const results = data?.pages.flat()

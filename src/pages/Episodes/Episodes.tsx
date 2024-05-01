@@ -4,12 +4,12 @@ import { FC, useState } from 'react';
 import { Episode } from '../../types';
 
 import { EpisodeInfo } from './components/EpisodInfo';
-import { useGetAllEpisodes } from './hooks/useGetAllEpisodes';
+import { useGetEpisodes } from './hooks/useGetEpisodes';
 import './styles.css';
 
 export const Episodes: FC = () => {
   const [page, setPage] = useState(1);
-  const { data, total, isLoading, isFetching } = useGetAllEpisodes(page);
+  const { data, total, isLoading, isFetching } = useGetEpisodes(page);
 
   const onChangePage = (value: number) => {
     setPage(value);

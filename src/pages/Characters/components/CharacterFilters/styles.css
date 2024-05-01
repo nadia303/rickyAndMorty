@@ -40,6 +40,11 @@
     border-color: white;
     color: black;
     background-color: rgb(245, 197, 24);
+    transition: background-color 0.3s ease;
+}
+
+.modal-content .selected-tag:hover {
+    background-color: rgb(126, 126, 126);
 }
 
 .modal-content .not-selected-tag{

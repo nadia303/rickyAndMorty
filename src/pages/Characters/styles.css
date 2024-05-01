@@ -14,15 +14,11 @@
     color: white;
 }
 
- .selected-tags {
-    margin-bottom: 26px;
-}
-
 .ant-tag.character-tag {
     color: rgb(0, 0, 0);
     cursor: pointer;
     border-radius: 20px;
-    padding: 3px 7px;
+    padding: 3px 10px;
 }
 
 .ant-tag:hover {
