@@ -16,7 +16,7 @@ export const useGetCharactersForEpisode = (characters: string[]) => {
         const endIndex = startIndex + batchSize;
         const urlsBatch = characters.slice(startIndex, endIndex);
         setStartIndex(endIndex);
-        const ids = urlsBatch.map((url) => getIdFromUrl(url))
+        const ids = urlsBatch.map((url) => getIdFromUrl(url)).filter((id) => id);
         const data = await getCharacters(ids);
         return data?.data || [];
     };
