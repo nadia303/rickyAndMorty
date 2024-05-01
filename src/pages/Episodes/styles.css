@@ -1,0 +1,10 @@
+.episodes-title {
+    margin-bottom: 40px;
+    border-left: 5px solid rgb(245, 197, 24);
+    height: 100%;
+    padding-left: 8px;
+}
+
+.episode-container {
+    margin-bottom: 26px;
+}

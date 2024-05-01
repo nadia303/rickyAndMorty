@@ -1,9 +1,9 @@
-import { FC } from 'react';
 import { Button, Col, Flex, Image, Row, Spin, Typography } from 'antd';
+import { FC } from 'react';
 
 import { Character } from '../../../../types';
 import { useFetchCharactersByIds } from '../../hooks/useFetchCharactersByIds';
-
+import './styles.css';
 interface ResidentsProps {
   ids: number[];
 }
@@ -13,7 +13,12 @@ export const Residents: FC<ResidentsProps> = ({ ids }) => {
     useFetchCharactersByIds(ids);
 
   return (
-    <Spin tip="Loading" size="small" spinning={loading}>
+    <Spin
+      tip="Loading"
+      size="small"
+      spinning={loading}
+      className="residents-spin"
+    >
       <Flex gap="middle" vertical>
         {characters?.map((character: Character) => {
           return (
@@ -23,19 +28,16 @@ export const Residents: FC<ResidentsProps> = ({ ids }) => {
               </Col>
               <Col span={14}>
                 <Flex vertical>
-                  <Typography.Title
-                    level={4}
-                    style={{ color: 'rgb(245, 197, 24)', marginTop: 0 }}
-                  >
+                  <Typography.Title level={4} className="residents-title">
                     {character.name}
                   </Typography.Title>
-                  <Typography.Text style={{ color: 'white' }}>
+                  <Typography.Text className="residents-text">
                     <strong>Gender:</strong> {character.gender}
                   </Typography.Text>
-                  <Typography.Text style={{ color: 'white' }}>
+                  <Typography.Text className="residents-text">
                     <strong>Species:</strong> {character.species}
                   </Typography.Text>
-                  <Typography.Text style={{ color: 'white' }}>
+                  <Typography.Text className="residents-text">
                     <strong>Status:</strong> {character.status}
                   </Typography.Text>
                 </Flex>

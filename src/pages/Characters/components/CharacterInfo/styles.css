@@ -1,0 +1,19 @@
+.character-card {
+    width: 100%;
+}
+
+.character-row {
+    margin-bottom: 16px;
+}
+
+.character-info-space {
+    margin-top: 0;
+}
+
+.character-name {
+    margin-top: 0;
+}
+
+.character-details {
+    color: #555;
+}

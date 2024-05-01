@@ -1,9 +1,9 @@
+import { useQuery } from '@apollo/client';
 import { useState } from 'react';
 
-import { useQuery } from '@apollo/client';
 
-import { GET_CHARACTERS_BY_IDS } from '../queryApi';
 import { Character } from '../../../types';
+import { GET_CHARACTERS_BY_IDS } from '../queryApi';
 
 export const useFetchCharactersByIds = (initialIds: number[]) => {
   const [ids, setIds] = useState<number[]>(initialIds.slice(0, 3));

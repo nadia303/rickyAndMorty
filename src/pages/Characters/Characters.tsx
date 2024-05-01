@@ -1,19 +1,14 @@
 import { Empty, Flex, Pagination, Space, Spin, Tag, Typography } from 'antd';
+import Search from 'antd/es/input/Search';
 import { useState } from 'react';
 
-import Search from 'antd/es/input/Search';
-
-import { Character } from '../../types';
-
-import { Gender } from '../../types';
-
-import { Status } from '../../types';
-
-import { useGetAllCharacters } from './hooks/useGetAllCharacters';
-import { CharacterInfo } from './components/CharacterInfo';
+import { Gender, Status, Character } from '../../types';
 
 import { CharacterFilters } from './components/CharacterFilters';
+import { CharacterInfo } from './components/CharacterInfo';
+import { useGetCharacters } from './hooks/useGetCharacters';
 
+import './styles.css';
 
 export const Characters = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -21,7 +16,7 @@ export const Characters = () => {
   const [selectedStatus, setSelectedStatus] = useState<Status | undefined>();
   const [page, setPage] = useState(1);
 
-  const { data, total, isLoading, isFetching } = useGetAllCharacters({
+  const { data, total, isLoading, isFetching } = useGetCharacters({
     page,
     searchQuery,
     selectedGender,
@@ -49,15 +44,7 @@ export const Characters = () => {
 
   return (
     <>
-      <Typography.Title
-        level={2}
-        style={{
-          marginBottom: '40px',
-          borderLeft: '5px solid rgb(245, 197, 24)',
-          height: '100%',
-          paddingLeft: 8,
-        }}
-      >
+      <Typography.Title level={2} className="characters-main-title">
         Characters ({total})
       </Typography.Title>
 
@@ -67,10 +54,10 @@ export const Characters = () => {
           wrap="wrap"
           align="center"
           justify="space-between"
-          style={{ marginBottom: '26px' }}
+          className="search-filter"
         >
           <Search
-            style={{ width: '400px', color: 'white' }}
+            className="search-input"
             placeholder="Search by name..."
             allowClear
             enterButton="Search"
@@ -84,28 +71,27 @@ export const Characters = () => {
             setSelectedStatus={setSelectedStatus}
           />
         </Flex>
-        <Flex
-          align="center"
-          gap="middle"
-          wrap="wrap"
-          style={{ marginBottom: '26px' }}
-        >
+        <Flex align="center" gap="middle" wrap="wrap" className="selected-tags">
           {selectedGender && (
-            <Tag closable onClose={handleCloseTagGender}>
+            <Tag
+              closable
+              onClose={handleCloseTagGender}
+              className="character-tag"
+            >
               {selectedGender}
             </Tag>
           )}
           {selectedStatus && (
-            <Tag closable onClose={handleCloseTagStatus}>
+            <Tag
+              closable
+              onClose={handleCloseTagStatus}
+              className="character-tag"
+            >
               {selectedStatus}
             </Tag>
           )}
         </Flex>
-        <Space
-          direction="vertical"
-          size={16}
-          style={{ width: '100%', marginBottom: '30px' }}
-        >
+        <Space direction="vertical" size={16} className="character-info">
           {data?.map((character: Character) => (
             <CharacterInfo
               key={character.id}
@@ -126,7 +112,7 @@ export const Characters = () => {
           pageSize={20}
           showSizeChanger={false}
           onChange={onChangePage}
-          key="pagination"
+          className="pagination"
         />
       )}
     </>

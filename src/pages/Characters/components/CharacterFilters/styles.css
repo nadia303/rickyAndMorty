@@ -1,8 +1,55 @@
-.modal-background .ant-modal-content {
-    background-color: rgb(31, 31, 31);
+.filter-button {
+    background-color: rgb(22, 119, 255);
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-.modal-background .ant-tag-checkable:hover {
-    background-color: gray;
+.modal-background {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.close-icon {
     color: white;
-} 
+    transition: color 0.3s ease;
+}
+
+.close-icon:hover {
+    color: rgb(126, 126, 126);
+}
+
+.modal-content {
+    background-color: rgb(31, 31, 31);
+    padding: 16px;
+}
+
+.ant-modal-content .filter-title:first-child {
+    margin-top: 0;
+}
+
+.ant-modal-content .filter-title {
+    color: rgb(245, 197, 24);
+}
+
+.filter-tags {
+    margin-top: 16px;
+}
+
+.modal-content .selected-tag {
+    cursor: pointer;
+    border-color: white;
+    color: black;
+    background-color: rgb(245, 197, 24);
+}
+
+.modal-content .not-selected-tag{
+    cursor: pointer;
+    border-color: white;
+    color: white;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content .not-selected-tag:hover {
+    background-color: rgb(126, 126, 126);
+}

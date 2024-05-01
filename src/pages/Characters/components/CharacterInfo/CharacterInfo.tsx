@@ -1,8 +1,7 @@
 import { Card, Col, Row, Space, Typography, Image } from 'antd';
 import { FC } from 'react';
 
-import { Gender } from '../../../../types';
-import { Status } from '../../../../types';
+import { Gender, Status } from '../../../../types';
 
 interface CharacterInfoProps {
   name: string;
@@ -20,25 +19,25 @@ export const CharacterInfo: FC<CharacterInfoProps> = ({
   gender,
 }) => {
   return (
-    <Card style={{ width: '100%' }}>
-      <Row wrap align="middle" gutter={[16, 16]}>
+    <Card className="character-card">
+      <Row wrap align="middle" gutter={[16, 16]} className="character-row">
         <Col span={4}>
           <Image src={image} width={160} />
         </Col>
         <Col lg={{ span: 20 }}>
-          <Space direction="vertical">
-            <Typography.Title level={4} style={{ marginTop: '0' }}>
+          <Space direction="vertical" className="character-info-space">
+            <Typography.Title level={4} className="character-name">
               {name}
             </Typography.Title>
-            <Typography.Text type="secondary">
+            <Typography.Text type="secondary" className="character-details">
               <strong>Species: </strong>
               {species}
             </Typography.Text>
-            <Typography.Text type="secondary">
+            <Typography.Text type="secondary" className="character-details">
               <strong>Status: </strong>
               {status}
             </Typography.Text>
-            <Typography.Text type="secondary">
+            <Typography.Text type="secondary" className="character-details">
               <strong>Gender: </strong>
               {gender}
             </Typography.Text>

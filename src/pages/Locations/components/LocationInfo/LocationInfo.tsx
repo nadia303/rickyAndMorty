@@ -1,8 +1,9 @@
 import { Card, Col, Image, Row, Space, Typography } from 'antd';
 import { FC } from 'react';
 
+import image from '../../../../assets/images/Rick-and-Morty2.jpeg';
 import { AdditionalInfoModal } from '../AdditionalInfoModal';
-import image from '../../../../assets/images/rick_and_morty.jpeg';
+import './styles.css';
 
 interface LocationInfoProps {
   name: string;
@@ -18,14 +19,14 @@ export const LocationInfo: FC<LocationInfoProps> = ({
   residents,
 }) => {
   return (
-    <Card style={{ width: '100%' }}>
+    <Card className="location-card">
       <Row wrap align="middle" gutter={[16, 16]}>
         <Col span={5}>
           <Image src={image} width={200} />
         </Col>
         <Col span={19}>
           <Space direction="vertical">
-            <Typography.Title level={4} style={{ marginTop: '0' }}>
+            <Typography.Title level={4} className="locations-title-info">
               {name}
             </Typography.Title>
             <Typography.Text type="secondary">

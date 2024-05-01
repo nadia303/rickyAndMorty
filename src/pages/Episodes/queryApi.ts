@@ -1,6 +1,5 @@
 import { api } from '../../api'
-import { Episode, ResponseInfo } from '../../types';
-import { Character } from '../../types';
+import { Episode, ResponseInfo, Character } from '../../types';
 
 export interface AllEpisodesResponse {
   data: {

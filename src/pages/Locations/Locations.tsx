@@ -3,12 +3,12 @@ import { FC, useState } from 'react';
 
 import { Location } from '../../types';
 
-import { useGetLocations } from './hooks/useGetLocations';
 import { LocationInfo } from './components/LocationInfo';
+import { useGetLocations } from './hooks/useGetLocations';
+import './styles.css';
 
 export const Locations: FC = () => {
   const [page, setPage] = useState(1);
-
   const { data, total, loading } = useGetLocations(page);
 
   const onChangePage = (value: number) => {
@@ -17,15 +17,7 @@ export const Locations: FC = () => {
 
   return (
     <>
-      <Typography.Title
-        level={2}
-        style={{
-          marginBottom: '40px',
-          borderLeft: '5px solid rgb(245, 197, 24)',
-          height: '100%',
-          paddingLeft: 8,
-        }}
-      >
+      <Typography.Title level={2} className="location-main-title">
         Locations ({total})
       </Typography.Title>
       <Spin tip="Loading" size="small" spinning={loading}>
@@ -34,19 +26,17 @@ export const Locations: FC = () => {
           wrap="wrap"
           align="center"
           justify="space-between"
-          style={{ marginBottom: '26px' }}
+          className="locations-container"
         >
-          {data?.map((location: Location) => {
-            return (
-              <LocationInfo
-                key={location.id}
-                name={location.name}
-                type={location.type}
-                dimension={location.dimension}
-                residents={location.residents.map((el) => el.id)}
-              />
-            );
-          })}
+          {data?.map((location: Location) => (
+            <LocationInfo
+              key={location.id}
+              name={location.name}
+              type={location.type}
+              dimension={location.dimension}
+              residents={location.residents.map((el) => el.id)}
+            />
+          ))}
         </Flex>
       </Spin>
       <Pagination

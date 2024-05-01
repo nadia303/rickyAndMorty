@@ -1,9 +1,5 @@
 import { api } from '../../api'
-import { ResponseInfo } from '../../types';
-import { Character } from '../../types';
-import { Gender } from '../../types';
-import { Status } from '../../types';
-
+import { Character, Gender, Status, ResponseInfo } from '../../types';
 export interface AllCharactersResponse {
   data: {
     info: ResponseInfo;

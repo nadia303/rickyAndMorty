@@ -1,9 +1,10 @@
-import { FC, useState } from 'react';
-import { Col, Divider, Flex, Modal, Row, Space, Typography } from 'antd';
 import { CloseOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { Col, Divider, Flex, Modal, Row, Space, Typography, Image } from 'antd';
+import { FC, useState } from 'react';
 
 import image from '../../../../assets/images/rick_and_morty.jpeg';
 import { Residents } from '../Residents';
+import './styles.css';
 
 interface AdditionalInfoModalProps {
   name: string;
@@ -31,46 +32,31 @@ export const AdditionalInfoModal: FC<AdditionalInfoModalProps> = ({
   return (
     <>
       <InfoCircleOutlined
-        style={{
-          position: 'absolute',
-          top: '50%',
-          right: 20,
-          fontSize: 24,
-          cursor: 'pointer',
-          transform: 'translateY(-50%)',
-          color: 'rgb(14, 99, 190)',
-        }}
+        className="info-circle-icon-locations"
         onClick={showModal}
       />
       <Modal
-        open={isModalOpen}
+        visible={isModalOpen}
         footer={null}
         onCancel={handleCancel}
-        closeIcon={<CloseOutlined style={{ color: 'white' }} />}
+        closeIcon={<CloseOutlined className="modal-close-icon" />}
         wrapClassName="modal-background"
       >
-        <Flex vertical style={{ margin: '30px 0' }}>
+        <Flex vertical className="modal-content">
           <Row>
             <Col span={10}>
-              <img
-                src={image}
-                alt="Ricky&Morty"
-                style={{ width: 150, height: '100%', objectFit: 'cover' }}
-              />
+              <Image src={image} width={150} />
             </Col>
             <Col span={14}>
               <Space direction="vertical">
-                <Typography.Title
-                  level={2}
-                  style={{ marginTop: '0', color: 'rgb(87, 153, 239)' }}
-                >
+                <Typography.Title level={2} className="additional-info-title">
                   {name}
                 </Typography.Title>
-                <Typography.Text type="secondary" style={{ color: 'white' }}>
+                <Typography.Text className="secondary-text">
                   <strong>Type: </strong>
                   {type}
                 </Typography.Text>
-                <Typography.Text type="secondary" style={{ color: 'white' }}>
+                <Typography.Text className="secondary-text">
                   <strong>Dimension: </strong>
                   {dimension}
                 </Typography.Text>
@@ -81,14 +67,7 @@ export const AdditionalInfoModal: FC<AdditionalInfoModalProps> = ({
           {residents.length > 0 && (
             <>
               <Divider plain={false} />
-              <Typography.Title
-                level={3}
-                style={{
-                  marginTop: 0,
-                  color: 'rgb(245, 197, 24)',
-                  marginBottom: '30px',
-                }}
-              >
+              <Typography.Title level={3} className="residents-title">
                 Residents
               </Typography.Title>
               <Residents ids={residents} />

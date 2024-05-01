@@ -1,18 +1,28 @@
+.app-layout {
+    min-height: 100vh;
+    background-color: #1a1a1a;
+}
+
+.app-content {
+    background: rgb(255, 255, 255);
+    min-height: 280px;
+    padding: 34px;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+}
+
 .modal-background .ant-modal-content {
     background-color: rgb(31, 31, 31);
 }
 
-.custom-button {
-    margin-top: 20px;
-    background-color: rgb(49, 49, 49);
-    color: rgb(87, 153, 239);
-    width: 200px;
-    align-self: center;
-    border: rgb(49, 49, 49);
-    height: 45px;
+.modal-close-icon {
+    color: white;
+    transition: color 0.3s ease;
 }
 
-.modal-background .ant-modal-content .custom-button:hover {
-    background: rgb(81, 85, 105);
-    background-color: rgb(81, 85, 105);
+.modal-close-icon:hover {
+    color: rgb(126, 126, 126);
 }
+
+

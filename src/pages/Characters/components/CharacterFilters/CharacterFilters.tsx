@@ -2,8 +2,7 @@ import { CloseOutlined, FilterFilled } from '@ant-design/icons';
 import { Button, Flex, Modal, Tag, Typography } from 'antd';
 import { Dispatch, FC, SetStateAction, useState } from 'react';
 
-import { Gender } from '../../../../types';
-import { Status } from '../../../../types';
+import { Gender, Status } from '../../../../types';
 import './styles.css';
 
 interface CharacterFiltersProps {
@@ -43,73 +42,48 @@ export const CharacterFilters: FC<CharacterFiltersProps> = ({
 
   return (
     <>
-      <Button
-        shape="circle"
-        style={{
-          backgroundColor: 'rgb(22, 119, 255)',
-          color: 'white',
-          fontSize: '16px',
-        }}
-        icon={<FilterFilled />}
-        onClick={showModal}
-      />
+      <Button shape="circle" className="filter-button" onClick={showModal}>
+        <FilterFilled className="filter-icon" />
+      </Button>
       <Modal
         open={isModalOpen}
         onCancel={handleCancel}
         footer={null}
-        closeIcon={<CloseOutlined style={{ color: 'white' }} />}
+        closeIcon={<CloseOutlined className="close-icon" />}
         wrapClassName="modal-background"
       >
-        <Flex
-          gap={4}
-          wrap="wrap"
-          vertical
-          style={{ backgroundColor: 'rgb(31,31,31)' }}
-        >
-          <Typography.Title
-            level={5}
-            style={{ marginTop: 0, color: 'rgb(245, 197, 24)' }}
-          >
+        <Flex gap={4} wrap="wrap" vertical className="modal-content">
+          <Typography.Title level={5} className="filter-title">
             Gender:
           </Typography.Title>
-          <Flex gap={4} wrap="wrap" align="center">
+          <Flex gap={4} wrap="wrap" align="center" className="filter-tags">
             {Object.values(Gender).map((gender) => (
               <Tag
                 key={gender}
                 onClick={() => handleGenderFilter(gender)}
-                color={
+                className={
                   selectedGender === gender
-                    ? 'rgb(245, 197, 24)'
-                    : 'transparent'
+                    ? 'selected-tag'
+                    : 'not-selected-tag'
                 }
-                style={{
-                  cursor: 'pointer',
-                  borderColor: 'white',
-                  color: selectedGender === gender ? 'black' : 'white',
-                }}
               >
                 {gender}
               </Tag>
             ))}
           </Flex>
-          <Typography.Title level={5} style={{ color: 'rgb(245, 197, 24)' }}>
+          <Typography.Title level={5} className="filter-title">
             Status:
           </Typography.Title>
-          <Flex gap={4} wrap="wrap" align="center">
+          <Flex gap={4} wrap="wrap" align="center" className="filter-tags">
             {Object.values(Status).map((status) => (
               <Tag
                 key={status}
                 onClick={() => handleStatusFilter(status)}
-                color={
+                className={
                   selectedStatus === status
-                    ? 'rgb(245, 197, 24)'
-                    : 'transparent'
+                    ? 'selected-tag'
+                    : 'not-selected-tag'
                 }
-                style={{
-                  cursor: 'pointer',
-                  borderColor: 'white',
-                  color: selectedStatus === status ? 'black' : 'white',
-                }}
               >
                 {status}
               </Tag>

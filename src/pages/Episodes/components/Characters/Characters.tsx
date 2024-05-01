@@ -1,8 +1,9 @@
-import { FC } from 'react';
 import { Button, Col, Flex, Image, Row, Spin, Typography } from 'antd';
+import { FC } from 'react';
 
-import { useGetCharactersForEpisode } from '../../hooks/useGetCharactersForEpisode';
 import { Character } from '../../../../types';
+import { useGetCharactersForEpisode } from '../../hooks/useGetCharactersForEpisode';
+import './styles.css';
 
 interface CharactersProps {
   characters: string[];
@@ -23,19 +24,16 @@ export const Characters: FC<CharactersProps> = ({ characters }) => {
               </Col>
               <Col span={14}>
                 <Flex vertical>
-                  <Typography.Title
-                    level={4}
-                    style={{ color: 'rgb(245, 197, 24)', marginTop: 0 }}
-                  >
+                  <Typography.Title level={4} className="character-title">
                     {character.name}
                   </Typography.Title>
-                  <Typography.Text style={{ color: 'white' }}>
+                  <Typography.Text className="character-card">
                     <strong>Gender:</strong> {character.gender}
                   </Typography.Text>
-                  <Typography.Text style={{ color: 'white' }}>
+                  <Typography.Text className="character-card">
                     <strong>Species:</strong> {character.species}
                   </Typography.Text>
-                  <Typography.Text style={{ color: 'white' }}>
+                  <Typography.Text className="character-card">
                     <strong>Status:</strong> {character.status}
                   </Typography.Text>
                 </Flex>

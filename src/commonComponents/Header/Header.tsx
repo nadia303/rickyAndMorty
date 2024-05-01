@@ -1,48 +1,33 @@
 import { Flex, Menu, Typography } from 'antd';
 import { Header as BasicHeader } from 'antd/es/layout/layout';
-
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { navItems } from '../../constants';
+import './styles.css';
 
 export const Header = () => {
+  const location = useLocation();
+
+  const activeKey =
+    navItems.find((item) => item.link === location.pathname)?.key || '1';
+
   return (
-    <BasicHeader
-      style={{
-        position: 'sticky',
-        top: 0,
-        zIndex: 1,
-        width: '100%',
-        height: '82px',
-        display: 'flex',
-        alignItems: 'center',
-        backgroundColor: 'rgb(18, 18, 18)',
-      }}
-    >
-      <Flex style={{ width: '100%', maxWidth: '1280px', margin: '0 auto' }}>
-        <Flex
-          style={{
-            backgroundColor: 'rgb(245, 197, 24)',
-            margin: '20px 20px',
-            padding: '10px 10px',
-            borderRadius: '5px',
-          }}
-        >
-          <Typography style={{ fontWeight: 700 }}>Ricky&Morty</Typography>
-        </Flex>
+    <BasicHeader className="custom-header">
+      <Flex className="header-content">
+        <Link to="/" className="brand-link">
+          <Flex className="brand">
+            <Typography>Ricky&Morty</Typography>
+          </Flex>
+        </Link>
         <Menu
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={['1']}
+          selectedKeys={[activeKey]}
           items={navItems.map((item) => ({
             key: item.key,
             label: <Link to={item.link}>{item.label}</Link>,
           }))}
-          style={{
-            flex: 1,
-            alignItems: 'center',
-            backgroundColor: 'rgb(18, 18, 18)',
-          }}
+          className="menu"
         />
       </Flex>
     </BasicHeader>

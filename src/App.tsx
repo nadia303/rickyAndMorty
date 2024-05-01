@@ -1,40 +1,26 @@
 import { Flex, Layout } from 'antd';
 import { Content } from 'antd/es/layout/layout';
-
 import { Route, Routes } from 'react-router-dom';
 
-import { Header } from './commonComponents/Header';
 import { Footer } from './commonComponents/Footer/Footer';
-import { Episodes } from './pages/Episodes';
+import { Header } from './commonComponents/Header';
 import { Characters } from './pages/Characters';
-import './index.css';
+import { Episodes } from './pages/Episodes';
 import { Locations } from './pages/Locations';
+import { NotFound } from './pages/NotFound';
+import './index.css';
 
 function App() {
   return (
-    <Layout
-      style={{
-        minHeight: '100vh',
-        backgroundColor: '#1a1a1a',
-      }}
-    >
+    <Layout className="app-layout">
       <Header />
-      <Content>
-        <Flex
-          vertical
-          style={{
-            background: 'rgb(255, 255, 255)',
-            minHeight: 280,
-            padding: 34,
-            margin: '0 auto',
-            maxWidth: 1280,
-            width: '100%',
-          }}
-        >
+      <Content className="app-content">
+        <Flex vertical>
           <Routes>
             <Route path="/" element={<Episodes />} />
             <Route path="/characters" element={<Characters />} />
             <Route path="/locations" element={<Locations />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Flex>
       </Content>

@@ -1,0 +1,39 @@
+.characters-main-title {
+    margin-bottom: 40px;
+    border-left: 5px solid rgb(245, 197, 24);
+    height: 100%;
+    padding-left: 8px;
+}
+
+.search-filter {
+    margin-bottom: 26px;
+}
+
+.search-input {
+    width: 400px;
+    color: white;
+}
+
+ .selected-tags {
+    margin-bottom: 26px;
+}
+
+.ant-tag.character-tag {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 3px 7px;
+}
+
+.ant-tag:hover {
+   background-color: rgb(245, 245, 245);
+}
+
+.character-info {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.pagination {
+    margin-top: 20px;
+}

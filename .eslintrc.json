@@ -22,7 +22,8 @@
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "quotes": ["error", "single"],
-    "import/order": [
+     "no-duplicate-imports": "error",
+       "import/order": [
       "error",
       {
         "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],

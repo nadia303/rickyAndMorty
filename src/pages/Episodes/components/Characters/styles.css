@@ -1,0 +1,23 @@
+.character-card {
+    color: white;
+}
+
+.ant-typography.character-title {
+    color: rgb(245, 197, 24);
+    margin-top: 0;
+}
+
+.custom-button {
+    margin-top: 20px;
+    background-color: rgb(49, 49, 49);
+    color: rgb(87, 153, 239);
+    width: 200px;
+    align-self: center;
+    border: rgb(49, 49, 49);
+    height: 45px;
+}
+
+.modal-background .ant-modal-content .custom-button:hover {
+    background: rgb(81, 85, 105);
+    background-color: rgb(81, 85, 105);
+}
